@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="window_shopper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="window_shopper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="CurrencyTxtField">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,25 +28,47 @@
                                     <constraint firstAttribute="height" constant="60" id="eZT-Pf-eSR"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your hourly wage" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CRb-us-M2e" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
-                                <rect key="frame" x="66" y="173" width="242" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your hourly wage" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CRb-us-M2e" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
+                                <rect key="frame" x="20" y="150" width="335" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="jtw-yP-L2I"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Item price" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uaa-G0-4vp" customClass="CurrencyTxtField" customModule="window_shopper" customModuleProvider="target">
+                                <rect key="frame" x="20" y="215" width="335" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="41r-Nn-77n"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Qkc-v3-KOo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="14k-ar-Ii9"/>
+                            <constraint firstItem="CRb-us-M2e" firstAttribute="trailing" secondItem="uaa-G0-4vp" secondAttribute="trailing" id="3TL-jh-faO"/>
+                            <constraint firstItem="CRb-us-M2e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4Y2-94-2GG"/>
+                            <constraint firstItem="CRb-us-M2e" firstAttribute="leading" secondItem="uaa-G0-4vp" secondAttribute="leading" id="B07-Eg-S3k"/>
+                            <constraint firstItem="CRb-us-M2e" firstAttribute="height" secondItem="uaa-G0-4vp" secondAttribute="height" id="MB0-zk-5xN"/>
+                            <constraint firstItem="uaa-G0-4vp" firstAttribute="top" secondItem="CRb-us-M2e" secondAttribute="bottom" constant="25" id="NBo-GB-SpM"/>
                             <constraint firstItem="Qkc-v3-KOo" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Oc0-Ac-ZGB"/>
                             <constraint firstItem="Qkc-v3-KOo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YIb-UA-aVz"/>
                             <constraint firstItem="CYU-8T-gnE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="35" id="fHr-ZK-Pd7"/>
                             <constraint firstItem="CYU-8T-gnE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pTZ-6k-YN3"/>
                             <constraint firstItem="Qkc-v3-KOo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="sqG-K0-IWb"/>
+                            <constraint firstItem="CRb-us-M2e" firstAttribute="top" secondItem="CYU-8T-gnE" secondAttribute="bottom" constant="35" id="tN1-RT-sqK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CRb-us-M2e" secondAttribute="trailing" constant="20" id="uwM-KF-lAu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="priceTxt" destination="uaa-G0-4vp" id="CaS-5R-bVH"/>
+                        <outlet property="wageTxt" destination="CRb-us-M2e" id="D8r-vp-mBJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
